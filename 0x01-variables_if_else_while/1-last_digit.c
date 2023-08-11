@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
-#include <stdio>
+#include <stdio.h>
 /**
  * main - Determines if last digit is greater than 5 or
  * is less than 6 and not 0 or  is 0
