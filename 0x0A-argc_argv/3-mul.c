@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * main - multiplies two numbers
  * @argc:number of arg
@@ -14,8 +15,8 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	n1 = (int)argv[1];
-	n2 = (int)argv[2];
+	n1 = atoi(argv[1]);
+	n2 = atoi(argv[2]);
 
 	r = n1 * n2;
 	printf("%d\n", r);
