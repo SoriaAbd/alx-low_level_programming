@@ -1,7 +1,7 @@
 #include "lists.h"
 #include <stdio.h>
 size_t loop(const listint_t *head);
-size_t print_listint_safe(const listint_t *head);
+
 /**
  * loop - help function
  * @head:pointer
