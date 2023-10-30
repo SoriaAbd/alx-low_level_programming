@@ -34,13 +34,11 @@ int main(int argc, char *argv[])
 	{
 		exit_w_error(97, "Usage: cp file_from file_to\n");
 	}
-
 	f_fd = open(argv[1], O_RDONLY);
 	if (f_fd == -1)
 	{
 		exit_w_error(98, "Error: Can't read from file %s\n", argv[1]);
 	}
-
 	t_fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR |
 		S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (t_fd == -1)
@@ -48,14 +46,12 @@ int main(int argc, char *argv[])
 		close(f_fd);
 		exit_w_error(99, "Error: Can't write to file %s\n", argv[2]);
 	}
-
 	while ((bytes_read = read(f_fd, buffer, BUFFER_SIZE)) > 0)
 	{
 		bytes_written = write(t_fd, buffer, bytes_read);
 		if (bytes_written != bytes_read)
 		{
-			close(f_fd);
-			close(t_fd);
+			close(f_fd), close(t_fd);
 			exit_w_error(99, "Error: Can't write to file %s\n", argv[2]);
 		}
 	}
